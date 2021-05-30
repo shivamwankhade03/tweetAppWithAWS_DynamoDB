@@ -1,0 +1,125 @@
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+            <div class="d-table-cell align-middle">
+
+                <div class="card-header " *ngIf="isEmailIdExits">
+                    <div class="alert-danger col-12 text-center" >
+                       Invalid email Id
+                    </div>
+                </div>
+                <div *ngIf="!forgetPwdFlag">
+                <div class="text-center mt-4">
+                    <h1 class="h2">Welcome back, User</h1>
+                    <p class="lead">
+                        Sign in to your account to continue
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header " *ngIf="invalidInput">
+                        <div class="alert-danger col-12 text-center" >
+                           Invalid user or password
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="m-sm-4">
+                            <div class="text-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Andrew Jones" class="img-fluid rounded-circle" width="132" height="132">
+                            <!-- assets\deafult.png -->
+                            </div>
+                            <form [formGroup]="loginForm" (submit)="submit(loginForm.value)">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input class="form-control form-control-lg" 
+                                    type="text" class="form-control" placeholder="Enter Username" formControlName="userName" id="username">
+                                </div>
+                            
+                           
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input class="form-control form-control-lg"
+                                    type="password" class="form-control" formControlName="password" id="password" type="password" name="password" placeholder="Enter your password">
+                                    <small>
+    <a  (click)="forgetPwdCall()">Forgot password?</a>
+  </small>
+                                </div>
+                                <div>
+                                    <div class="custom-control custom-checkbox align-items-center">
+                                        New Here? <a class="text-primary " (click)="toSignup()">Signup</a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button  type="submit" class="btn buttonColor text-light"
+                                    [disabled]="!loginForm.valid" class="btn btn-lg btn-primary">Sign in</button>
+                                    <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+
+                <div *ngIf="forgetPwdFlag">
+                    <div class="text-center mt-4">
+                        <h1 class="h2">Welcome back, User</h1>
+                        <p class="lead">
+                            Sign in to your account to continue
+                        </p>
+                    </div>
+                <div class="card" >
+                    <div class="card-body">
+                           
+                        <form [formGroup]="forgetpwd" (submit)="savePwd(forgetpwd.value)">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input class="form-control form-control-lg" 
+                                type="text" class="form-control" placeholder="Enter Username" formControlName="userNamePwd" id="username">
+                            </div>
+                
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control form-control-lg"
+                                type="password" class="form-control" formControlName="newPwd"  type="password" name="password" placeholder="Enter your new password"
+                                [class.is-invalid]="newPwd.invalid && newPwd.touched"
+                                >
+                            
+                        <div *ngIf="newPwd.errors">
+                            <small class="text text-danger"
+                                *ngIf="newPwd.errors.required && newPwd.touched">Password is required</small>
+                            <small class="text text-danger" *ngIf="newPwd.errors.maxlength">Password too long</small>
+                        </div>
+                                    
+                            </div>
+                            <div class="form-group">
+                                <label>Confirmed New Password</label>
+                                <input class="form-control form-control-lg"
+                                type="password" class="form-control" formControlName="confirmNewPwd" 
+                                [class.is-invalid]="confirmNewPwd.invalid && confirmNewPwd.touched"
+                                type="password" name="password" placeholder="Enter your new password">
+                          
+                                <div class="text-danger"
+                                *ngIf="confirmNewPwd.invalid && confirmNewPwd.errors.required && confirmNewPwd.touched">
+                                Confirm the Password</div>
+                            <div class="text-danger" *ngIf="forgetpwd.get('confirmNewPwd').hasError('nomatch')">Password
+                                and Confirm Password do not match</div>
+                           
+                            </div>
+                            <div class="text-center mt-3">
+                                <button  type="submit" class="btn buttonColor text-light"
+                                [disabled]="!forgetpwd.valid" class="btn btn-lg btn-primary">Save</button>
+                                <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>

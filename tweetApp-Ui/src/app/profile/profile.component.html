@@ -1,0 +1,118 @@
+<!-- <div class="container ">
+<div class="row">
+    <div class=" col-6">
+    <div class="card contClass" >
+        <div class="card-header">
+            User Info
+        </div>
+         <div class="card-body">
+           <h5 class="card-title">{{userDetails.firstName}} {{userDetails.lastName}}</h5>
+         </div>
+         <ul class="list-group list-group-flush">
+          <li class="list-group-item">First Name : {{userDetails.firstName}}</li>
+          <li class="list-group-item">Last Name : {{userDetails.lastName}}</li>
+          <li class="list-group-item">Email Id : {{userDetails.userId}}</li>
+         </ul>
+         <div class="card-body">
+           <a href="#" class="card-link">Gender : {{userDetails.gender}}</a>
+           <a href="#" class="card-link">Birth Date : {{userDetails.dateOfBirth}}</a>
+         </div>
+       </div>
+    </div>
+     
+       <div class="col-6">
+       <app-tweet *ngFor="let index of arr;let i=index" [ngClass]="{'active':i==0}"></app-tweet>
+        </div>
+    </div>    
+
+</div> -->
+
+<div class="container ">
+  <div class="row">
+    <div class="col-8 verticalCss1">
+      <div class="row ">
+        <div class="card borderCss1 rounded-0">
+          <div class="card-body">
+            <span><a style="padding:0%" (click)="back()">
+                <h4> Profile</h4>
+              </a></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card borderCss rounded-0">
+          <div class="card-header bg-dark">
+            <div class="p-5 m-5 bg-dark">
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="upcss">
+              <div><img src="assets\user2.png" width="20%"></div>
+              <b>{{'@'+userDetails.userId}} </b><button class="btn btn-info" style="float: right;">Set Up Profile</button>
+              <p>{{userDetails.firstName}} {{userDetails.lastName}}</p>
+              <p><i class="fa fa-calendar" aria-hidden="true"> Joined {{joinedDate | date : 'MMM d, y'}}</i></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row " *ngFor="let tweet of tweetByUser;let i=index">
+        <app-tweet class="col-12 px-0 mt-2 mb-1" (newItemEvent)="addItem($event)"  [tweet]="tweet"></app-tweet>
+    </div>
+    
+      <!--
+      <div class="row " *ngFor="let tweet of allTweets;let i=index">
+          <app-tweet class="col-12 px-0 mt-2 mb-1" [tweet]="tweet"></app-tweet>
+      </div>
+   -->
+    </div>
+    <div class="col-4 cssCol">
+      <!-- <app-search></app-search> -->
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <div class="container  mx-0 pl-0 ">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <span>
+            <span><a (click)="back()" class="previous round">&#8249;</a></span><span>
+              <b> Profile</b>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <div class="card ">
+        <div class="card-header">
+          <div class="p-5 m-5 bg-light">
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="upcss">
+            <div><img src="assets\user.png" width="20%"></div>
+            <b>{{userDetails.userId}} </b><button class="btn btn-info" style="float: right;">Set Up Profile</button>
+            <p>{{userDetails.firstName}} {{userDetails.lastName}}</p>
+            <p><i class="fa fa-calendar" aria-hidden="true"> Joined {{joinedDate | date : 'MMM d, y'}}</i></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row ">
+        <div class="col-8 mt-2 ">
+          <div *ngFor="let tweet of tweetByUser;let i=index">
+            <app-tweet [tweet]="tweet"></app-tweet>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> -->

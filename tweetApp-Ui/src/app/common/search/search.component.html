@@ -1,0 +1,15 @@
+
+
+        <div class="card-body" >
+            <form >
+                <div class="row">
+                        <input [(ngModel)]="userName" name="userName" placeholder="Search tweet  " class="form-control"
+                            (input)="search($event)" >
+                </div>
+            </form>
+        </div>
+
+
+<div class="my-2" *ngFor="let user of filteredList">
+    <app-user [user]="user"></app-user>
+</div>

@@ -1,0 +1,162 @@
+
+<div class="row pb-5 px-0 py-0 mx-0">
+    <div class="col-xs-11 mx-auto">
+
+        <h2 class=" m-1 p-2 text-center ">Register User</h2>
+         
+        <div class="card m-2 " *ngIf="newUserAdded">
+        
+            <div class="mt-1 p-1" *ngIf="userAlreadyExits" >
+                <div class="alert-danger col-12 " >
+                    UserName already exists!!
+                </div>
+            </div>
+            <form [formGroup]="signUpForm" (submit)="addUser(signUpForm.value)">
+                <div class="row mx-1">
+
+                    <div class="col-md-6 col-xs-12  mt-5">
+                        <label for="email">User Email</label>
+                        <input type="text" class="form-control" placeholder="Enter your email"
+                            formControlName="email" id="email"
+                            [class.is-invalid]="email.invalid && email.touched">
+                        <div *ngIf="email.errors">
+                            <small class="text text-danger" *ngIf="email.errors.required && email.touched">User
+                                Email Id is required</small>
+                        </div>
+
+                        <div class="validation-error text-danger"
+                            *ngIf="signUpForm.get('email').touched && signUpForm.get('email').hasError('pattern')">
+                            Email Format should be followed
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 col-xs-12  mt-5">
+                        <label for="logInId">Login Id</label>
+                        <input type="text" class="form-control" placeholder="Enter your login Id"
+                            formControlName="logInId" id="logInId"
+                            [class.is-invalid]="logInId.invalid && logInId.touched">
+                        <div *ngIf="logInId.errors">
+                            <small class="text text-danger" *ngIf="logInId.errors.required && logInId.touched">User
+                                logInId  is required</small>
+                        </div>
+
+                        <div class="validation-error text-danger"
+                            *ngIf="signUpForm.get('logInId').touched && signUpForm.get('logInId').hasError('pattern')">
+                            Email Format should be followed
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row mx-1">
+                    <div class="col-md-6 col-xs-12 mt-5">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" placeholder="Enter First Name"
+                            formControlName="firstName" id="firstName"
+                            [class.is-invalid]="firstName.invalid && firstName.touched">
+                        <div *ngIf="firstName.errors">
+                            <small class="text text-danger"
+                                *ngIf="firstName.errors.required && firstName.touched">firstName is required</small>
+                            <small class="text text-danger" *ngIf="firstName.errors.maxlength">firstName too
+                                long</small>
+                        </div>
+                        <div class="validation-error text-danger"
+                            *ngIf="signUpForm.get('firstName').touched && signUpForm.get('firstName').hasError('pattern')">
+                            First name should not contain digits.
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-xs-12  mt-5">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastName"
+                            id="lastName" [class.is-invalid]="lastName.invalid && lastName.touched">
+                        <div *ngIf="lastName.errors">
+                            <small class="text text-danger"
+                                *ngIf="lastName.errors.required && lastName.touched">lastName is required</small>
+                            <small class="text text-danger" *ngIf="lastName.errors.maxlength">lastName too long</small>
+                        </div>
+                        <div class="validation-error text-danger"
+                            *ngIf="signUpForm.get('lastName').touched && signUpForm.get('lastName').hasError('pattern')">
+                            Last name should not contain digits.
+                        </div>
+                    </div>
+                </div>
+                <div class="row mx-1">
+                    <div class="col-md-6 col-xs-12 mt-5">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password"
+                            formControlName="password" id="password"
+                            [class.is-invalid]="password.invalid && password.touched">
+                        <div *ngIf="password.errors">
+                            <small class="text text-danger"
+                                *ngIf="password.errors.required && password.touched">Password is required</small>
+                            <small class="text text-danger" *ngIf="password.errors.maxlength">Password too long</small>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-xs-12 mt-5">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password"
+                            formControlName="confirmPassword" id="confirmPassword"
+                            [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched">
+                        <div class="text-danger"
+                            *ngIf="confirmPassword.invalid && confirmPassword.errors.required && confirmPassword.touched">
+                            Confirm the Password</div>
+                        <div class="text-danger" *ngIf="signUpForm.get('confirmPassword').hasError('nomatch')">Password
+                            and Confirm Password do not match</div>
+                    </div>
+                </div>
+
+                <div class="row mx-1">
+                    <!-- <div class="col-md-6 col-xs-12 mt-5">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth"
+                            placeholder="Enter Registration Date"
+                            [class.is-invalid]="dateOfBirth.invalid && dateOfBirth.touched">
+                        <div *ngIf="dateOfBirth.errors">
+                            <small class="text text-danger"
+                                *ngIf="dateOfBirth.invalid && dateOfBirth.errors.required && dateOfBirth.touched">
+                                Registration Date is required</small>
+                        </div>
+                    </div> -->
+                    <div class="col-md-6 col-xs-12 mt-5">
+                            <label for="number">Contact Number</label>
+                            <input type="number" id="number" class="form-control" placeholder="123.." formControlName="contactNumber">
+                      
+                    </div>
+                    <div class="col-md-6 col-xs-12 mt-5">
+                        
+                            <label for="dateOfBirth">Gender</label>
+                            <div>
+                            <input type="radio"  value="Male" formControlName="gender">
+                              <span class="p-1">Male</span>
+                            </div>
+                          <div>
+                            <input type="radio" value="Female" formControlName="gender">
+                              <span class="p-1">Female</span>
+                          </div> 
+                       
+                    </div>
+                    <!-- <div class="col-md-6 col-xs-12 mt-5">
+                        <div class="col-md-6 col-xs-12 mt-5">
+                            <label for="number">Contact Number</label>
+                            
+                            <input type="number" placeholder="123.." formControlName="contactNumber">
+                        
+                        </div>
+                    </div> -->
+                    
+                </div>
+                <div class="row mt-5 ml-5 mr-5 mb-5">
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn buttonColor text-light"
+                            [disabled]="!signUpForm.valid">Signup</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>

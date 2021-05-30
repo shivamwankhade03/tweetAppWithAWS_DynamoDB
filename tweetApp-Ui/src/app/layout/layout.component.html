@@ -1,0 +1,86 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-2 fixcss" >
+      <div class="sidebar-logo">
+        <img width="30%" src="assets\logo.png">
+      </div>
+      <ul class="sidebar-navigation">
+        <li class="header"></li>
+        <li>
+          <a routerLink="home" routerLinkActive="active">
+            <!-- <img src="https://i.ibb.co/6tKFLWG/home.png" alt="" height="26.25px" width="26.25px" /> -->
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <b> Home</b>
+          </a>
+        </li>
+        <li class="header"></li>
+        <li>
+          <a routerLink="profile" routerLinkActive="active" >
+            <i class="fa fa-tachometer" aria-hidden="true" ></i> <b>Profile</b>
+          </a>
+        </li>
+        <li class="header"></li>
+        <li>
+          <a   (click)="login()" >
+            <i class="fa fa-info-circle" aria-hidden="true"></i> <b>Logout</b>
+          </a>
+        </li>
+        
+      </ul>
+      <div class="userDesc">
+        <!-- <img src="assets/user.png" width="15%"> -->
+        <span class="username"><b style="color:black;">{{userName}}</b>
+         </span>
+         <span class="logged-in">●</span>
+         <!-- <span class="logged-out">●</span> -->
+        </div>
+    </div>
+
+    <div class="col-10 rightCss">
+      <router-outlet></router-outlet>
+    </div>
+   
+  </div>
+</div>
+
+
+
+
+<!-- <div class="container ">
+<div class="sidebar-container">
+    <div class="sidebar-logo">
+      <img width="30%" src="assets\logo.png">
+    </div>
+    <ul class="sidebar-navigation">
+      <li class="header"></li>
+      <li>
+        <a routerLink="home" routerLinkActive="active">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          <b> Home</b>
+        </a>
+      </li>
+      <li class="header"></li>
+      <li>
+        <a routerLink="profile" routerLinkActive="active" >
+          <i class="fa fa-tachometer" aria-hidden="true" ></i> <b>Profile</b>
+        </a>
+      </li>
+      <li class="header"></li>
+      <li>
+        <a   (click)="login()" >
+          <i class="fa fa-info-circle" aria-hidden="true"></i> <b>Logout</b>
+        </a>
+      </li>
+      
+    </ul>
+
+    <div class="userDesc">
+      <img src="assets/user.png" width="10%"><span class="username">{{userName}}</span>
+    </div>
+  </div> 
+  <div class="content-container">
+  <router-outlet></router-outlet>
+  </div>
+
+</div> -->

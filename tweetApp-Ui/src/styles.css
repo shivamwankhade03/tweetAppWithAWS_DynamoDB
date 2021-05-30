@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.bgColor{
+    background-color: #1DA1F2;
+}
+
+
+.buttonCss{
+  background-color: rgb(29, 161, 242);
+  border-radius: 3%;
+  color: #fff;
+}
+html{
+  position: relative;
+}

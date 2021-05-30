@@ -1,0 +1,116 @@
+<!-- <div class="content-container">
+    <div class="container-fluid px-0">
+
+        <nav class="navbar navbar-expand-lg colorClass ">
+            <a class="navbar-brand text-light" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: unset !important;">
+              <ul class="nav nav-pills mr-auto justify-content-end">
+                <li class="nav-item active">
+                  <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" routerLink="profile" routerLinkActive="active">Profile</a>
+                </li>
+                <li class="nav-item">
+                <a   class="nav-link text-light" (click)="login()" routerLinkActive="active"> Logout</a> 
+            </li><li class="nav-item">
+                <a   class="nav-link text-light" > Active User</a> 
+            </li>  
+              </ul>
+            </div>
+          </nav>
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+  -->
+<div class="container cssCon ">
+<div class="row">
+  <div class="col-8 verticalCss"> 
+    <div class="row ">
+      <div class="card borderCss1 rounded-0">
+        <div class="card-body">
+          <h4>Home</h4>
+        </div>
+      </div> 
+    </div>
+    <div class="row">
+      <div class="card borderCss rounded-0">
+        <div class="card-body">
+          <div class="row">
+            <div  class="col-2 pr-0">
+              <img src="assets\user.png" class="imgSize" />
+            </div>
+            <div class="col-9 pl-0" >
+          <form class="pt-2" >
+            <textarea placeholder="What's happening ?" maxlength=144 rows="5" [formControl]="tweetField" style="width: -webkit-fill-available;resize:none;"></textarea>
+            <!-- <h6 class="pull-right">320 characters remaining</h6> -->
+            <button class="btn buttonCss" (click)="tweetFun()"  style="float:right;" type="submit">Tweet</button>          
+          </form>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row " *ngFor="let tweet of allTweets;let i=index">
+        <app-tweet class="col-12 px-0 mt-2 mb-1"  (newItemEvent)="addItem($event)" [tweet]="tweet"></app-tweet>
+    </div>
+
+  </div>
+  <div class="col-4 cssCol">
+    <app-search></app-search>
+ </div>
+</div>
+
+</div>
+ 
+
+
+
+
+ <!-- <div class="container mx-0 pl-0">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <h4>Home</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-search></app-search>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+          <img class="col-2" src="assets\user.png" width="5%" height="5%"/>
+          <form class="col-10" >
+            <textarea placeholder="What's happening ?" rows="5" [formControl]="tweetField" style="width: -webkit-fill-available;resize:none;"></textarea>
+            <button class="btn btn-info bgColor" (click)="tweetFun()"  style="float:right;" type="submit">Tweet</button>          
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="row ">
+    <div class="col-8 mt-2 ">
+      <div *ngFor="let tweet of allTweets;let i=index">
+      <app-tweet [tweet]="tweet"></app-tweet>
+    </div>   
+    </div>
+       
+  </div>
+
+</div> -->

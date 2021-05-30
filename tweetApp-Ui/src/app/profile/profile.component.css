@@ -1,0 +1,63 @@
+.contClass{
+    float: left;
+    width: 90%;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .round {
+    border-radius: 50%;
+  }
+  .upcss{
+    margin: -15% 0% 0% 0%;
+  }
+ 
+  .card{
+    width: -webkit-fill-available;
+}
+.card-body{
+  padding: 1% 2% 1% 2%;
+}
+.padding{
+  padding: 5% 0% 5% 10%;
+}
+.verticalCss1{
+  padding-left: 7px;
+  padding-right: 0px;
+  margin: 4px;
+}
+
+.borderCss{
+  border-left: 0px;
+  border-right: 0px;
+  
+}
+.borderCss1{
+  border: 0px;
+
+}
+.cssCol{
+  width: 20%;
+  position: fixed;
+  height: 754px;
+  left: 75%;
+ border-left: 1px solid rgb(221, 219, 219);
+}

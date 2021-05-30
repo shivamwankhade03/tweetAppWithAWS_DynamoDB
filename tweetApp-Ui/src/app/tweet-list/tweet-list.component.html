@@ -1,0 +1,17 @@
+<div class="content-container">
+    <div class="container-fluid px-0">
+
+
+<app-tweet *ngFor="let index of arr"></app-tweet>
+    
+<div >
+    <div class="container-fluid twwetPostCssBox">
+      <textarea [(ngModel)]="course" placeholder="Enter tweet " class=" col-lg-6" rows="3" ></textarea><span class="px-3 ">
+              <button class="btn btn-primary" type="button"
+                      (click)="searchCourse(course)">Post</button></span>
+  </div>
+</div>
+</div>
+</div>
+
+
